@@ -1,0 +1,31 @@
+{
+  "name": "switchbot.js",
+  "version": "1.0.3",
+  "description": "The new and improved Switch Bot! This bot is a newer version of the original SwitchBot but in Typescript!",
+  "main": "src/index.ts",
+  "scripts": {
+    "start": "ts-node ./src/index.ts",
+    "dev": "ts-node-dev --respawn --trace-warnings --transpile-only --poll ./src/index.ts"
+  },
+  "keywords": [],
+  "author": "Wiki",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@discordjs/opus": "^0.5.0",
+    "@discordjs/voice": "^0.5.0",
+    "discord.js": "github:discordjs/discord.js",
+    "gtts": "^0.2.1",
+    "mysql": "^2.18.1",
+    "open": "^8.2.0",
+    "sodium": "^3.0.2",
+    "wikipedia": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/mysql": "^2.15.18",
+    "@types/node": "^15.12.2"
+  },
+  "homepage": "https://github.com/W1kipedia/SwitchBot.js#readme",
+  "bugs": {
+    "url": "https://github.com/W1kipedia/SwitchBot.js/issues"
+  }
+}
