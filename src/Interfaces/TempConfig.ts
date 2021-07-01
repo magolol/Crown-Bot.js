@@ -10,6 +10,5 @@ type MessageInfo = {
 }
 
 export interface TempConfig {
-	agreedToOpenUrl: boolean,
 	summaryPosition?: MessageInfo[]
 }
