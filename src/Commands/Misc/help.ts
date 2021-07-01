@@ -61,7 +61,7 @@ export const command: Command = {
             ],
             footer: { text: 'https://github.com/magolol/C-r-o-w-n-e-d-Bot.js' }
         });
-        msg.channel.send({embed: em})
+        msg.channel.send({ embeds: [e]})
             .catch(err => console.error(err));
     }
 }

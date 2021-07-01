@@ -37,7 +37,7 @@ export const command: Command = {
             );
         }
 
-        await message.awaitReactions(filter, {time: 10000,max: 1, errors: ['time']})
+        await message.awaitReactions({ filter: filter, time: 10000,max: 1, errors: ['time']})
         .then(collected => {
             const reaction = collected.first();
 

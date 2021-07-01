@@ -28,7 +28,7 @@ export const command: Command = {
                     .addField('in bank', result[0].bank)
                     .setFooter(`Command by ${msg.author.username}`, msg.author.avatarURL());
                     
-                    msg.channel.send({embed: embed});
+                    msg.channel.send({embeds: [embed]});
                     
                     db.destroy();
                 });
@@ -49,7 +49,7 @@ export const command: Command = {
                         .addField('in bank', result[0].bank)
                         .setFooter(`Command by ${msg.author.username}`, msg.author.avatarURL());
 
-                        msg.channel.send({embed: embed});
+                        msg.channel.send({embeds: [embed]});
 
                     db.destroy();
                 });

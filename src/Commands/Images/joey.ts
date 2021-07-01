@@ -11,6 +11,6 @@ export const command: Command = {
         const e = new MessageEmbed({title: "joey moment"});
         e.setFooter(`Command used by ${msg.author.username}`, msg.author.avatarURL());
         e.setImage('https://media.discordapp.net/attachments/693941496147214357/762032313567019048/IMG_20201003_102333.jpg?width=555&height=475');
-        msg.channel.send({ embed: e });
+        msg.channel.send({ embeds: [e]});
     }
 }

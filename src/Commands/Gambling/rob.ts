@@ -47,7 +47,7 @@ export const command: Command = {
                             title: good_situations[Math.floor(Math.random() * good_situations.length)],
                             color: 3066993
                         })
-                        msg.channel.send({embed: em})
+                        msg.channel.send({embeds: [em]})
                             .catch(err => console.error(err));
                         await client.update_bank(msg.author.id, earnings, 'wallet');
                         await client.update_bank(victim.id, -earnings, 'wallet');
@@ -73,7 +73,7 @@ export const command: Command = {
                                 title: bad_situations[Math.floor(Math.random() * bad_situations.length)],
                                 color: 15158332
                             })
-                            msg.channel.send({embed: em})
+                            msg.channel.send({embeds: [em]})
                                 .catch(err => console.error(err));
                             await client.update_bank(msg.author.id, -conseqeunce, 'wallet');
                             await client.update_bank(victim.id, conseqeunce, 'wallet');

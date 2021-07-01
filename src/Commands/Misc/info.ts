@@ -42,7 +42,7 @@ export const command: Command = {
                                     });
                                     em.setFooter(`Command by ${msg.author.username}`, msg.author.avatarURL());
 
-                                    msg.channel.send({embed: em}) 
+                                    msg.channel.send({ embeds: [em]})
                                     .catch(err => console.error(err))
                                     return;
                                 }
