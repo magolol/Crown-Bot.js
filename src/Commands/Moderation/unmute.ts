@@ -1,4 +1,4 @@
-import { Collection, GuildMember, MessageReaction, Role, User } from 'discord.js';
+import { Collection, GuildMember, MessageReaction, User } from 'discord.js';
 import { createConnection } from 'mysql';
 import { Command } from '../../Interfaces'
 
