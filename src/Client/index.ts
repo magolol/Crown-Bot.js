@@ -3,7 +3,6 @@ import path from 'path';
 import { readdirSync, appendFile } from 'fs';
 import { access, mkdir} from 'fs/promises';
 import { Command, Events, Config, TempConfig } from '../Interfaces';
-import { createConnection } from "mysql";
 import ConfigJson from '../../data/config.json';
 
 class ExtendedClient extends Client {
@@ -31,7 +30,7 @@ class ExtendedClient extends Client {
                 this.commands.set(command.name, command);
 
                 if (command.aliases.length !== 0) {
-                    command.aliases.forEach((alias) => {
+                    command.aliases.forEach((alias: string) => {
                         this.aliases.set(alias, command);
                     });
                 }
