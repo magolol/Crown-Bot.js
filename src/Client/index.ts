@@ -8,7 +8,9 @@ import ConfigJson from '../../data/config.json';
 class ExtendedClient extends Client {
     public commands: Collection<string, Command> = new Collection();
     public events: Collection<string, Events> = new Collection();
-    public cooldowns = {};
+    public cooldowns = {
+        sponsor: []
+    };
     public tempConfig: TempConfig = {
         summaryPosition: []
     }
