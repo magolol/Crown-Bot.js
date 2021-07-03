@@ -16,7 +16,7 @@ export const command: Command = {
         });
         if (typeof joe === 'undefined') joe = '🦧';
 
-        msg.channel.send({ embed: e })
+        msg.channel.send({ embeds: [e]})
         .then((m) => setTimeout(() => m.delete(), 3000))
         await msg.react(joe);
     }

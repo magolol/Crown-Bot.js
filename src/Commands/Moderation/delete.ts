@@ -1,4 +1,3 @@
-import { TextChannel } from 'discord.js';
 import { Command } from '../../Interfaces';
 
 export const command: Command = {

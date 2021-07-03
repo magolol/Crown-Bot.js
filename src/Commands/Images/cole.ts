@@ -11,6 +11,6 @@ export const command: Command = {
         const e = new MessageEmbed({ title: "cole moment" });
         e.setFooter(`Command used by ${msg.author.username}`, msg.author.avatarURL());
         e.setImage('https://media.discordapp.net/attachments/693941496147214357/768460791962664970/20201021_000957.jpg');
-        msg.channel.send({ embed: e });
+        msg.channel.send({ embeds: [e]});
     }
 }

@@ -11,7 +11,7 @@ export const command: Command = {
 	run: async (client, msg, args) => {
 		client.cooldowns.sponsor.forEach((id:string) => {
 			if (id === msg.author.id) {
-				msg.channel.send(`You're still on cooldown for ${(client.cooldowns.open_url[msg.author.id.toString()]) / (1000 * 60)} minutes!`)
+				msg.channel.send(`You're still on cooldown for ${(client.cooldowns.sponsor[msg.author.id.toString()]) / (1000 * 60)} minutes!`)
 			}
 		})
 

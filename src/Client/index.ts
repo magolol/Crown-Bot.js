@@ -3,21 +3,15 @@ import path from 'path';
 import { readdirSync, appendFile } from 'fs';
 import { access, mkdir} from 'fs/promises';
 import { Command, Events, Config, TempConfig } from '../Interfaces';
-import { createConnection } from "mysql";
 import ConfigJson from '../../data/config.json';
 
-class ExtendedClient extends Client{
+class ExtendedClient extends Client {
     public commands: Collection<string, Command> = new Collection();
     public events: Collection<string, Events> = new Collection();
     public cooldowns = {
-        open_url: [],
-        beg: [],
-        gambleflip: [],
-        rob: [],
         sponsor: []
     };
     public tempConfig: TempConfig = {
-        agreedToOpenUrl: false,
         summaryPosition: []
     }
     public config: Config = ConfigJson;
@@ -38,7 +32,7 @@ class ExtendedClient extends Client{
                 this.commands.set(command.name, command);
 
                 if (command.aliases.length !== 0) {
-                    command.aliases.forEach((alias) => {
+                    command.aliases.forEach((alias: string) => {
                         this.aliases.set(alias, command);
                     });
                 }
@@ -53,34 +47,6 @@ class ExtendedClient extends Client{
             this.on(event.name, event.run.bind(null, this))
         });
 
-    }
-    public OpenAccount(user_id:string|number): void {
-        const amogus = createConnection(this.config.dbEconomy);
-
-        amogus.connect((err) => {
-            if (err) throw err;
-            const sql = `SELECT client_id FROM Economy WHERE client_id = '${user_id}'`;
-            amogus.query(sql, (err, result: any[]) => {
-                if (err) throw err;
-                if (result.length === 0) {
-                    const queue = `INSERT INTO Economy VALUES ('${user_id}', 69, 420)`;
-                    amogus.query(queue, (problem, yeet) => {if (problem) throw problem;console.log(yeet)});
-                }
-            });
-        });
-    }
-    public async update_bank(user_id:string|number, change:number, mode?: 'bank'|'wallet'): Promise<void> {
-        if (typeof mode === 'undefined'|| mode === null) mode = 'wallet';
-        const con = createConnection(this.config.dbEconomy);
-
-        con.connect((f) => {
-            if (f) throw f;
-            const sql = `UPDATE Economy SET ${mode} = ${mode} + ${change} WHERE client_id = '${user_id}'`;
-            con.query(sql, (err, result) => {
-                if (err) throw err;
-                con.destroy();
-            });
-        });
     }
 
     private async FileExists(fileName: string): Promise<boolean> {

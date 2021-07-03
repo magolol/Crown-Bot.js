@@ -1,4 +1,4 @@
-import { Collection, CollectorFilter, GuildMember, Message, MessageReaction, Role, User } from 'discord.js';
+import { GuildMember, MessageReaction, User } from 'discord.js';
 import { createConnection } from 'mysql';
 import { Command } from '../../Interfaces'
 
@@ -37,7 +37,7 @@ export const command: Command = {
             );
         }
 
-        await message.awaitReactions(filter, {time: 10000,max: 1, errors: ['time']})
+        await message.awaitReactions({ filter: filter, time: 10000,max: 1, errors: ['time']})
         .then(collected => {
             const reaction = collected.first();
 

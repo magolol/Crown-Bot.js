@@ -29,7 +29,7 @@ export const command: Command = {
             );
         }
 
-        message.awaitReactions(filter, { idle: 10000, max: 1, errors: ['time'] })
+        message.awaitReactions({ filter: filter, idle: 10000, max: 1, errors: ['time'] })
             .then(async (collected) => {
                 const reaction = collected.first();
 

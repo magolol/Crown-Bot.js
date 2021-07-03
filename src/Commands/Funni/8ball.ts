@@ -11,7 +11,7 @@ export const command: Command = {
 
         const choices = ['It is certain.',
             'It is decidedly so.',
-            'I don't think anyone cares..',
+            'I don\'t think anyone cares..',
             'Yes – definitely.',
             'You may rely on it.',
             'As I see it, yes.',

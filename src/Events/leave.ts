@@ -12,7 +12,7 @@ export const event: Events = {
                         title: `${member.user.tag} left the server 😔`,
                         color: 15158332
                     })
-                    channel.send({embed: em})
+                    channel.send({ embeds: [em]})
                         .catch(err => console.error(err))
                 }
             })
