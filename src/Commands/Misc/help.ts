@@ -51,7 +51,7 @@ export const command: Command = {
                     value: `${await loopDir(join(__dirname, '..', 'Wikipedia'))}`
                 }
             ],
-            footer: { text: 'https://github.com/magolol/C-r-o-w-n-e-d-Bot.js' }
+            footer: { text: 'https://github.com/magolol/Crown-Bot.js' }
         });
         msg.channel.send({ embeds: [em]})
             .catch(err => console.error(err));
