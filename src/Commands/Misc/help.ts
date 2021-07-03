@@ -27,16 +27,8 @@ export const command: Command = {
             color: 3447003,
             fields: [
                 {
-                    name: '**Economy**',
-                    value: `${await loopDir(join(__dirname, '..', 'Economy'))}`
-                },
-                {
                     name: '**Funni**',
                     value: `${await loopDir(join(__dirname, '..', 'Funni'))}`
-                },
-                {
-                    name: '**Gambling**',
-                    value: `${await loopDir(join(__dirname, '..', 'Gambling'))}`
                 },
                 {
                     name: '**Images**',
