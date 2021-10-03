@@ -48,7 +48,7 @@ export const command: Command = {
                     console.error(err);
                     return;
                 });
-                msg.channel.send(`I have shadow-realm banished that one fuckhead ${msg.mentions.members.first().user.tag}`)
+                msg.channel.send(`I have banished ${msg.mentions.members.first().user.tag}n to the shadow realm.`)
 
             } else {
                 await message.delete();
