@@ -7,7 +7,7 @@ export const event: Events = {
         console.log(`${member.user.tag} left the server!`);
         member.guild.channels.cache.filter(c => c.type === 'text')
             .forEach((channel: TextChannel) => {
-                if (channel.id === '693942943039488050') {
+                if (channel.id === '832645362442829826') {
                     const em = new MessageEmbed({
                         title: `${member.user.tag} left the server 😔`,
                         color: 15158332

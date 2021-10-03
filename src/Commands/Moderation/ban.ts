@@ -3,7 +3,7 @@ import { Command } from '../../Interfaces';
 
 export const command: Command = {
     name: 'ban',
-    description: 'Ban someone, within reason of course...',
+    description: 'Ban someone, within reason of course.',
     example: 'c.ban @YaMomLmaoGottem { Optional Reason }',
     public: true,
     aliases: ['yeet'],
@@ -48,7 +48,7 @@ export const command: Command = {
                     console.error(err);
                     return;
                 });
-                msg.channel.send(`I have banished that one guy ${msg.mentions.members.first().user.tag} to the shadow realm.`)
+                msg.channel.send(`I have banished ${msg.mentions.members.first().user.tag} to the shadow realm.`)
 
             } else {
                 await message.delete();
