@@ -48,7 +48,7 @@ export const command: Command = {
                     console.error(err);
                     return;
                 });
-                msg.channel.send(`I have shadow-realm banished that one fuckhead ${msg.mentions.members.first().user.tag}`)
+                msg.channel.send(`I have banished that one guy ${msg.mentions.members.first().user.tag} to the shadow realm.`)
 
             } else {
                 await message.delete();
@@ -61,7 +61,7 @@ export const command: Command = {
         .catch((collected: Collection<string, MessageReaction>) => {
             msg.delete();
             message.delete();
-            msg.channel.send("ur too slow")
+            msg.channel.send("Whoops! Too slow! Try again.")
                 .then((m) => setTimeout(() => m.delete(), 2000));
         });
 

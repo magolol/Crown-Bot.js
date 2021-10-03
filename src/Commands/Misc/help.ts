@@ -6,7 +6,7 @@ import { Command } from '../../Interfaces';
 export const command: Command = {
     name: 'help',
     example: 'c.help',
-    description: 'Get a list of all commands!',
+    description: 'Get some commands',
     public: true,
     aliases: [],
     run: async (client, msg, args) => {
@@ -49,6 +49,14 @@ export const command: Command = {
                 {
                     name: '**Wikipedia**',
                     value: `${await loopDir(join(__dirname, '..', 'Wikipedia'))}`
+                },
+                {
+                    name: '**Assistance**',
+                    value: `${await loopDir(join(__dirname, '..', 'assistance'))}`
+                },
+                {
+                    name: '**the frii**',
+                    value: `${await loopDir(join(__dirname, '..', 'pyrosea'))}`
                 }
             ],
             footer: { text: 'https://github.com/magolol/Crown-Bot.js' }
