@@ -23,7 +23,7 @@ export const command: Command = {
                 })
             })
             .catch((err) => {
-                msg.channel.send("It seems like the person you're trying to DM has their DMs closed. imagine lol")
+                msg.channel.send("It seems like the person you're trying to DM has their DMs closed. imagine")
                 .then((m) => {
                     setTimeout(() => {
                         m.delete();
